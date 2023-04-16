@@ -1,1 +1,15 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reflected XSS Exemple</title>
+</head>
+<body>
+  <h1>Reflected XSS Exemple</h1>
+  <script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const message = urlParams.get('message');
+    document.write(message);
+  </script>
+</body>
+</html>

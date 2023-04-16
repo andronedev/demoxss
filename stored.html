@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stored XSS Exemple</title>
+</head>
+<body>
+  <h1>Stored XSS Exemple</h1>
+  <div id="comments"></div>
+  <form onsubmit="storeComment(); return false;">
+    <label for="comment">Commenter:</label>
+    <input type="text" id="comment" name="comment">
+    <button type="submit">Envoyer</button>
+  </form>
+  <script>
+    const comments = [];
+    function storeComment() {
+      const comment = document.getElementById('comment').value;
+      comments.push(comment);
+      displayComments();
+    }
+    function displayComments() {
+      document.getElementById('comments').innerHTML = comments.join('<br>');
+    }
+  </script>
+</body>
+</html>

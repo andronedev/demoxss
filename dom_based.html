@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM-based XSS Exemple</title>
+</head>
+<body>
+  <h1>DOM-based XSS Exemple</h1>
+  <input type="text" id="name" oninput="displayGreeting()" placeholder="Entrez votre nom">
+  <p id="greeting"></p>
+  <script>
+    function displayGreeting() {
+      const name = document.getElementById('name').value;
+      document.getElementById('greeting').innerHTML = 'Hello, ' + name + '!';
+    }
+  </script>
+</body>
+</html>

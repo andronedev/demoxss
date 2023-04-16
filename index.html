@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Démonstration des attaques XSS</title>
+  <style>
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    li {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Démonstration des attaques XSS</h1>
+  <p>Ces exemples présentent les trois types d'attaques XSS : réfléchi, stocké et DOM-based. Veuillez suivre les instructions pour chaque démonstration.</p>
+  <ul>
+    <li>
+      <h2>XSS réfléchi</h2>
+      <p>1. Ouvrez le lien suivant dans un nouvel onglet : <a href="reflected.html" target="_blank">reflected.html</a></p>
+      <p>2. Ajoutez le texte suivant à la fin de l'URL dans la barre d'adresse : <code>?message=<script>alert('Attaque XSS réfléchie!')</script></code></p>
+      <p>3. Appuyez sur Entrée pour déclencher l'attaque XSS réfléchie.</p>
+    </li>
+    <li>
+      <h2>XSS stocké</h2>
+      <p>1. Ouvrez le lien suivant dans un nouvel onglet : <a href="stored.html" target="_blank">stored.html</a></p>
+      <p>2. Entrez le texte suivant dans le champ de commentaire : <code>&lt;script&gt;alert('Attaque XSS stockée!')&lt;/script&gt;</code></p>
+      <p>3. Cliquez sur "Submit" pour déclencher l'attaque XSS stockée.</p>
+    </li>
+    <li>
+      <h2>XSS DOM-based</h2>
+      <p>1. Ouvrez le lien suivant dans un nouvel onglet : <a href="dom_based.html" target="_blank">dom_based.html</a></p>
+      <p>2. Entrez le texte suivant dans le champ de texte : <code>&lt;script&gt;alert('Attaque XSS DOM-based!')&lt;/script&gt;</code></p>
+      <p>3. L'attaque XSS DOM-based se déclenche automatiquement lors de la saisie du texte.</p>
+    </li>
+  </ul>
+</body>
+</html>
