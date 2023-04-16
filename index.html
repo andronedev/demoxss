@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
   <title>Démonstration des attaques XSS</title>
   <style>
     ul {
@@ -19,19 +20,19 @@
     <li>
       <h2>XSS réfléchi</h2>
       <p>1. Ouvrez le lien suivant dans un nouvel onglet : <a href="reflected.html" target="_blank">reflected.html</a></p>
-      <p>2. Ajoutez le texte suivant à la fin de l'URL dans la barre d'adresse : <code>?message=&lt;script&gt;alert('Attaque XSS réfléchie!')&lt;/script&gt;</code></p>
+      <p>2. Ajoutez le texte suivant à la fin de l'URL dans la barre d'adresse : <b>?message=&lt;script&gt;alert('Attaque XSS réfléchie!')&lt;/script&gt;</b></p>
       <p>3. Appuyez sur Entrée pour déclencher l'attaque XSS réfléchie.</p>
     </li>
     <li>
       <h2>XSS stocké</h2>
       <p>1. Ouvrez le lien suivant dans un nouvel onglet : <a href="stored.html" target="_blank">stored.html</a></p>
-      <p>2. Entrez le texte suivant dans le champ de commentaire : <code>&amp;lt;script&amp;gt;alert('Attaque XSS stockée!')&amp;lt;/script&amp;gt;</code></p>
+      <p>2. Entrez le texte suivant dans le champ de commentaire : <b>&amp;lt;script&amp;gt;alert('Attaque XSS stockée!')&amp;lt;/script&amp;gt;</b></p>
       <p>3. Cliquez sur "Submit" pour déclencher l'attaque XSS stockée.</p>
     </li>
     <li>
       <h2>XSS DOM-based</h2>
       <p>1. Ouvrez le lien suivant dans un nouvel onglet : <a href="dom_based.html" target="_blank">dom_based.html</a></p>
-      <p>2. Entrez le texte suivant dans le champ de texte : <code>&amp;lt;script&amp;gt;alert('Attaque XSS DOM-based!')&amp;lt;/script&amp;gt;</code></p>
+      <p>2. Entrez le texte suivant dans le champ de texte : <b>&amp;lt;script&amp;gt;alert('Attaque XSS DOM-based!')&amp;lt;/script&amp;gt;</b></p>
       <p>3. L'attaque XSS DOM-based se déclenche automatiquement lors de la saisie du texte.</p>
     </li>
   </ul>
