@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DOM-based XSS Exemple</title>
+  <title>Exemple de XSS basé sur le DOM avec calculatrice</title>
 </head>
 <body>
-  <h1>DOM-based XSS Exemple</h1>
-  <input type="text" id="name" oninput="displayGreeting()" placeholder="Entrez votre nom">
-  <p id="greeting"></p>
+  <h1>Exemple de XSS basé sur le DOM avec calculatrice</h1>
+  <input type="text" id="expression" oninput="calculate()" placeholder="Entrez une expression mathématique">
+  <p id="result"></p>
   <script>
-    function displayGreeting() {
-      const name = document.getElementById('name').value;
-      const greeting = document.getElementById('greeting');
-      greeting.innerHTML = 'Bonjour, ' + name + '!';
+    function calculate() {
+      const expression = document.getElementById('expression').value;
+      const result = document.getElementById('result');
+      
+      try {
+        const calculatedValue = eval(expression);
+        result.textContent = 'Résultat : ' + calculatedValue;
+      } catch (e) {
+        console.error('Erreur lors de l\'évaluation de l\'expression :', e);
+        result.textContent = 'Expression invalide';
+      }
     }
   </script>
 </body>
